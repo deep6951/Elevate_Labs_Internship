@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Fri May 29 05:03:27 2026 as: /usr/lib/nmap/nmap -sS -F -oN nmap_report.txt 10.251.24.196
+Nmap scan report for 10.251.24.196
+Host is up (0.0018s latency).
+Not shown: 97 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+# Nmap done at Fri May 29 05:03:29 2026 -- 1 IP address (1 host up) scanned in 2.14 seconds
