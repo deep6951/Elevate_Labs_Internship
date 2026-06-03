@@ -1,0 +1,52 @@
+```text
+================================================================================
+TECHNICAL AUDIT SYSTEM TRAIL: TENABLE NESSUS DEPLOYMENT & TROUBLESHOOTING LOG
+================================================================================
+
+[STEP 01] TERMINAL PURGE & FILE SYSTEM STABILIZATION
+--------------------------------------------------------------------------------
+- Opened an elevated Windows Command Prompt (Run as Administrator).
+- Terminated the active engine daemon to prevent file locking issues:
+    net stop "Tenable Nessus"
+- Navigated into the core application installation directory:
+    cd "C:\Program Files\Tenable\Nessus"
+- Executed a complete global profile reset sequence to clear out corrupt configuration artifacts:
+    nessuscli.exe fix --reset-all
+
+[STEP 02] MANUAL CONFIGURATION PURGE
+--------------------------------------------------------------------------------
+- Navigated into the underlying hidden data directory structures:
+    cd "C:\ProgramData\Tenable\Nessus\nessus"
+- Deleted the mismatched and corrupt feed identification files causing validation loops:
+    del plugin_feed_info.inc
+    del plugins\plugin_feed_info.inc
+
+[STEP 03] LICENSE ACQUISITION & ENGINE REGISTRATION
+--------------------------------------------------------------------------------
+- Requested a fresh, verified activation token via the Tenable registration portal.
+- Registered the token using the local command-line interface:
+    nessuscli.exe fetch --register XXXX-XXXX-XXXX-XXXX
+- Verified successful validation response from Tenable servers.
+
+[STEP 04] BACKEND USER INJECTION
+--------------------------------------------------------------------------------
+- Bypassed the persistent duplicate database wizard block by manually adding the admin account:
+    nessuscli.exe adduser admin
+- Confirmed user settings: Administrative Privileges = Yes, Rules = Blank.
+
+[STEP 05] HARD DATABASE REBUILD & SERVICE LAUNCH
+--------------------------------------------------------------------------------
+- Triggered a forced, deep database signature recompile to link all unarchived plugins:
+    nessusd.exe -R
+- Kept the terminal open and uninterrupted for 12 minutes until extraction and mapping reached 100%.
+- Restored normal background system operations:
+    net start "Tenable Nessus"
+
+[STEP 06] WEB DASHBOARD RECONNAISSANCE & RUNNING THE SCAN
+--------------------------------------------------------------------------------
+- Launched a secure web browser window to: https://localhost:8834/#/login
+- Input local administrative credentials (admin) to access the raw engine dashboard.
+- Configured a new "Basic Network Scan" task, targeting host IP: 10.71.224.196
+- Launched the scan task and monitored progress for 9 minutes until the status read "Completed".
+- Verified the final output matrix: 95 Informational Alerts mapped, confirming a highly hardened target configuration state.
+================================================================================
