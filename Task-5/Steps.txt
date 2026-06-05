@@ -1,0 +1,38 @@
+================================================================================
+TECHNICAL AUDIT SYSTEM TRAIL: WIRESHARK PACKET INTERCEPTION & AUDIT LOG
+================================================================================
+
+[PHASE 01]: INGESTION & DEPLOYMENT STAGE
+--------------------------------------------------------------------------------
+- Downloaded official Wireshark Windows x64 binaries.
+- Configured Npcap driver deployment to enable loopback and promiscuous capture.
+- Launched Wireshark app interface using administrative access rights.
+
+[PHASE 02]: INTERFACE CAPTURE ACQUISITION
+--------------------------------------------------------------------------------
+- Inspected the active network interfaces graph page.
+- Double-clicked the primary Ethernet/Wi-Fi adapter showing active waveform lines.
+- Verified packet stream index counters began incrementing inside the main layout.
+
+[PHASE 03]: CONTROLLED STIMULUS GENERATION
+--------------------------------------------------------------------------------
+- Launched a browser tab to trigger web traffic.
+- Opened a separate administrative Command Prompt and generated structural ICMP frames:
+    ping 8.8.8.8
+- Maintained packet stream capture for exactly 60 seconds.
+- Clicked the red square button ("Stop capturing packets") to pause the capture loop.
+
+[PHASE 04]: DATA PARSING & PROTOCOL ISOLATION
+--------------------------------------------------------------------------------
+- Injected specific syntax filters into the display text input bar to isolate traffic:
+    a. Typed "dns" -> Inspected Application domain lookup resolution records.
+    b. Typed "tcp" -> Verified Transport Layer state handshakes and flags.
+    c. Typed "icmp" -> Evaluated Network Layer request/reply sequences.
+- Inspected deep header fields within the packet details structural middle window pane.
+
+[PHASE 05]: COLD CONSOLE FILE STORAGE
+--------------------------------------------------------------------------------
+- Executed file output commands: File -> Export Specified Packets.
+- Changed file save target type setting to: Wireshark/tcpdump/... - pcap (*.pcap).
+- Saved document securely to local disk file system as: network_capture.pcap
+================================================================================
