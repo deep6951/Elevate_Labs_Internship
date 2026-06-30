@@ -1,0 +1,21 @@
+From: Amazon Security <account-security@amazon-supportverify.com>
+To: mohandas1990@gmail.com.com
+Subject: Action Required: Unusual Sign-In Activity Detected
+
+Dear Customer,
+
+We detected an unusual sign-in attempt on your Amazon account from a new device.
+
+For your protection, access to certain account features has been temporarily restricted.
+
+Please verify your account information within the next 24 hours to prevent further restrictions.
+
+Verify Account:
+https://amazon-security-login.verify-account.net
+If you do not verify your account, your access may remain limited until ownership can be confirmed.
+
+Thank you,
+
+Amazon Account Security Team
+
+Amazon.com
